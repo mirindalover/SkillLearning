@@ -54,8 +54,6 @@
 - 显示有变更的内容
 > git status
 
-## 设置：
-
 
 ## 切换分支
 
@@ -65,6 +63,7 @@
 - 查看本地分支
 > git branch
 
+## 设置：
 
 - 设置name
 > git config --global user.name [userName]
@@ -72,3 +71,11 @@
 - 设置email
 > git config --global user.email [userEmail]
 
+## git解决冲突：
+
+	git pull  ：
+		出现error: Your local changes to the following files would be overwritten by merge:
+	git add.
+	git commit (添加到本地库后)
+	git pull(此时，文件是冲突后的文件，我们需要手动删除来解决冲突)
+	再次执行上传流程，即可
