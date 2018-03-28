@@ -54,6 +54,8 @@
 - 显示有变更的内容
 > git status
 
+## 设置：
+
 
 ## 切换分支
 
@@ -64,5 +66,9 @@
 > git branch
 
 
+- 设置name
+> git config --global user.name [userName]
 
+- 设置email
+> git config --global user.email [userEmail]
 
