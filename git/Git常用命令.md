@@ -79,3 +79,6 @@
 	git commit (添加到本地库后)
 	git pull(此时，文件是冲突后的文件，我们需要手动删除来解决冲突)
 	再次执行上传流程，即可
+	
+	二、tortoiseGit --> Edit conflict
+	把最终的结果，保存到merge中
