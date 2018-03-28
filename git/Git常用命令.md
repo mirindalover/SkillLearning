@@ -11,7 +11,13 @@
 - 新建一个分支，并切换到分支
 > git checkout -b [branch-name]
 
-相当于 git branch [branch-name] ———— git checkout [branch-name]
+相当于 
+
+- 新建分支
+> git branch [branch-name] 
+
+- 切换分支
+> git checkout [branch-name]
 
 - 添加文件到缓存区
 > git add [file1] [file2] ... //添加文件
@@ -47,5 +53,16 @@
 
 - 显示有变更的内容
 > git status
+
+
+## 切换分支
+
+- 查看远程分支
+> git branch -a
+
+- 查看本地分支
+> git branch
+
+
 
 
