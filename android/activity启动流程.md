@@ -36,10 +36,14 @@ activity的启动，主要是客户端(可能是多个)和服务端通讯的过�
 
 ![链接图片](https://github.com/mirindalover/SummaryOfProgrammingLearning/blob/master/android/resource/activity的启动过程.png "activity的启动过程") 
 
+省略的步骤3，为Activity的其他方法和生命周期
+
 下面跟着源码来进行分析：
 
 
 启动activity可以从startActivity调起，也可以从桌面图标调起
+
+##	第一遍通信：从旧Activity startActivity() 到 onPause掉旧Activity
 
 点击桌面图标,从Launcher最终调到Activity.startActivity()
 
@@ -109,7 +113,7 @@ Activity.java
 	
 	Instrumentation是用来监控应用程序和系统之间的交互。
 	mMainThread.getApplicationThread()，Binder用来和 ActivityManagerService 通信的
-	mToken	，指向了ActivityManagerService的一个ActivityRecord对象，是ActivityManagerService用来维护每一个activity的运行状态和信息的
+	mToken指向了ActivityManagerService的一个ActivityRecord对象，是ActivityManagerService用来维护每一个activity的运行状态和信息的
 
 ```Java	
 Instrumentation.java
@@ -398,6 +402,8 @@ ActivityThread.java
 	performPauseActivity()-->Activity.onPause()
 	QueuedWork.waitToFinish();保证一些读写操作完成
 	最后使用ActivityManagerProxy来发送进程间通讯
+	
+##	第二次通讯，旧Activity 通知activityPaused完成，准备resume新的Activity
 
 ```Java
 ActivityManagerProxy.java
@@ -462,7 +468,7 @@ ActivityStack.resumeTopActivityInnerLocked()
 ```
 
 	如果activity已经启动过，就调到前台
-	没有启动就开启
+	没有启动就创建并调到前台
 
 ```Java
 ActivityStackSupervisor.java
@@ -542,10 +548,22 @@ ActivityThread.java
 ```
 	
 	通过 Instrumentation来创建activity，然后执行一系列生命周期
+	
+##	后续流程
 
+	本文只分析到 新Activity的onResume方法执行，后续还有新Activity通过Binder告诉resume执行完、旧activity的onStop方法执行等
+	
+	没有分析进程的创建过程 mService.startProcessLocked()
+	
+##	总结
 
+	第一步：Activity通过Instrumentation发起startActivity，Instrumentation通过客户端的Binder对象 ActivityManagerProxy 通知 ActivityManagerService需要开启Activity	
 
-
+			服务端 接到任务后，先让 旧Activity onPause, 通过 Binder对象 ApplicationThreadProxy 通知 客户端的 ApplicationThread(ActivityThread内部类)
+			
+	第二步：旧Activity onPause完成后，ActivityThread 调用 客户端的Binder对象ActivityManagerProxy 通知 ActivityManagerService，完成 onPause操作了
+			
+			服务端 接到任务后，开始resume 新Activity，通过 Binder对象 ApplicationThreadProxy 通知 客户端的 ApplicationThread(ActivityThread内部类)
 
 
 
