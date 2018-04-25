@@ -453,8 +453,8 @@ ActivityStack.java
 	删除Pause超时的消息
 
 ```Java
-	completePauseLocked()-->ActivityStackSupervisor.resumeTopActivitiesLocked()-->ActivityStack.resumeTopActivityLocked()
-	-->ActivityStack.resumeTopActivityInnerLocked()-->
+completePauseLocked()-->ActivityStackSupervisor.resumeTopActivitiesLocked()-->ActivityStack.resumeTopActivityLocked()
+-->ActivityStack.resumeTopActivityInnerLocked()-->
 
 ActivityStack.resumeTopActivityInnerLocked()
 
@@ -554,16 +554,18 @@ ActivityThread.java
 	本文只分析到 新Activity的onResume方法执行，后续还有新Activity通过Binder告诉resume执行完、旧activity的onStop方法执行等
 	
 	没有分析进程的创建过程 mService.startProcessLocked()
+		其实是通过Socket通信，写入"--runtime-args" "--setuid=" + uid等。fork进程后，返回进程id
+		
 	
 ##	总结
 
 	第一步：Activity通过Instrumentation发起startActivity，Instrumentation通过客户端的Binder对象 ActivityManagerProxy 通知 ActivityManagerService需要开启Activity	
 
-			服务端 接到任务后，先让 旧Activity onPause, 通过 Binder对象 ApplicationThreadProxy 通知 客户端的 ApplicationThread(ActivityThread内部类)
+	服务端 接到任务后，先让 旧Activity onPause, 通过 Binder对象 ApplicationThreadProxy 通知 客户端的 ApplicationThread(ActivityThread内部类)
 			
 	第二步：旧Activity onPause完成后，ActivityThread 调用 客户端的Binder对象ActivityManagerProxy 通知 ActivityManagerService，完成 onPause操作了
 			
-			服务端 接到任务后，开始resume 新Activity，通过 Binder对象 ApplicationThreadProxy 通知 客户端的 ApplicationThread(ActivityThread内部类)
+	服务端 接到任务后，开始resume 新Activity，通过 Binder对象 ApplicationThreadProxy 通知 客户端的 ApplicationThread(ActivityThread内部类)
 
 
 
