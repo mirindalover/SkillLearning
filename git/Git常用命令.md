@@ -55,13 +55,20 @@
 > git status
 
 
-## 切换分支
+## 切换
 
 - 查看远程分支
 > git branch -a
 
 - 查看本地分支
 > git branch
+
+- 版本回滚
+> git revert
+
+- 删除本地缓存，不让该文件受版本的管理
+> git rm -r --cached [文件名称]
+> 应用示例:gitignore写错导致文件add到缓存
 
 ## 设置：
 
@@ -82,3 +89,12 @@
 	
 	二、tortoiseGit --> Edit conflict
 	把最终的结果，保存到merge中
+
+##	studio刚导入没有关联git，不显示提交的问题
+
+>	setting中version control来手动添加
+	
+	
+	
+	
+	
