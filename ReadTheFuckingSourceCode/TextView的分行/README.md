@@ -74,11 +74,13 @@
 ####	需要的api
 	
 >	StaticLayout.getDesiredWidth()	一行文字需要的宽度
+>
 >	layout.getLineStart(i)(非静态)	第i行文字在text的开始index
+>
 >	layout.getLineEnd(i)(非静态)	第i行文字在text的结尾index
 
 
-
+详见 JustifyTextView.java
 
 
 

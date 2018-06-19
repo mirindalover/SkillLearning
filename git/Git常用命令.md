@@ -5,6 +5,9 @@
 - 下载整个项目
 > git clone [url]
 
+-	下载指定分支的项目
+>	git clone -b [分支] [url]
+
 - 新建一个分支
 > git branch [branch-name]
 
@@ -69,6 +72,11 @@
 - 删除本地缓存，不让该文件受版本的管理
 > git rm -r --cached [文件名称]
 > 应用示例:gitignore写错导致文件add到缓存
+
+## 恢复
+
+-	恢复一个没有提交的文件
+>	git checkout [文件]
 
 ## 设置：
 
