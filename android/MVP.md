@@ -11,7 +11,7 @@
 
 ##	添加lifecycle-component
 
-在presenter中添加lifecycle组件，组件原理[https://github.com/mirindalover/SummaryOfProgrammingLearning/blob/master/ReadTheFuckingSourceCode\lifecycle-compent原理\README.md]
+在presenter中添加lifecycle组件，[组件原理](https://github.com/mirindalover/SummaryOfProgrammingLearning/blob/master/ReadTheFuckingSourceCode\lifecycle-compent原理\README.md)
 
 如图：
 
