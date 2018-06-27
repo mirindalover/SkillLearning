@@ -16,3 +16,17 @@
 ##	源码阅读
 
 记录一些日常的代码阅读小结
+
+##	设计模式
+
+-	[策略模式](https://github.com/mirindalover/SummaryOfProgrammingLearning/blob/master/designPattern/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.md)
+
+
+
+##	待完成
+
+-	WebView的介绍
+
+-	Handler原理
+
+-	设计6大原则
