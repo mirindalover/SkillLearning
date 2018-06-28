@@ -225,6 +225,13 @@ JavaBBinderHolder来自	Binder初始化时init()，放在了mObject变量中
 
 ![ServiceManager管理](https://github.com/mirindalover/SummaryOfProgrammingLearning/blob/master/android/resource/IPC-Binder.png "ServiceManager")
 
+再总结一波：
+
+*	添加服务时，ServiceManager把在Server对应的JavaBBinder添加到Binder驱动中生成binder_procs。ServiceManager本身拿着对应的缓存svcinfo。
+
+*	获取服务时，通过ServiceManager查找svcinfo中的对应引用，返回BpBinder或者BBinder(视进程是否与Server相同)
+
+*	使用，通过BpBinder->Binder驱动->JavaBBinder
 
 ##	AIDL的介绍
 
@@ -262,6 +269,10 @@ JavaBBinderHolder来自	Binder初始化时init()，放在了mObject变量中
 	
 	service端注册Binder到ServiceManager的查找表中，
 
+
+#	参考资料
+
+-	[邓凡平的 深入理解Android](https://blog.csdn.net/innost/article/details/47208049)
 
 
 

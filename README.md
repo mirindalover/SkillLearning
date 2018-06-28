@@ -17,6 +17,8 @@
 
 记录一些日常的代码阅读小结
 
+-	[线程池的原理](https://github.com/mirindalover/SummaryOfProgrammingLearning/blob/master/ReadTheFuckingSourceCode/ThreadPool)
+
 ##	设计模式
 
 -	[策略模式](https://github.com/mirindalover/SummaryOfProgrammingLearning/blob/master/designPattern/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.md)
@@ -30,3 +32,17 @@
 -	Handler原理
 
 -	设计6大原则
+
+
+写在后面：	
+
+-	编程主要学习内容
+
+*	设计模式
+*	网络	http/https
+*	并发	线程池
+*	android：
+
+
+
+
