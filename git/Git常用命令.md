@@ -51,6 +51,8 @@
 - 获取用户名和邮箱
 > git config --list
 
+> git config --local user.name	查看本地仓库的用户名
+
 > git config  --global user.name 你的目标用户名；
 >
 > git config  --global user.email 你的目标邮箱名;
@@ -83,6 +85,8 @@
 
 - 设置name
 > git config --global user.name [userName]
+
+> git config --local user.name [userName]	设置本地用户
 
 - 设置email
 > git config --global user.email [userEmail]
