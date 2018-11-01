@@ -25,11 +25,11 @@
 
 *	禁用缓存	
 
->	pragma:no-cached  |		Cache-Control:no-cached
+>	pragma:no-store  |		Cache-Control:no-store
 
 *	缓存方式
 
->	Cache-Control:private|public...
+>	Cache-Control:private|public...|no-cached(相当于max-age=0)
 
 *	过期日期
 

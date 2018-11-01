@@ -60,6 +60,12 @@
 - 显示有变更的内容
 > git status
 
+- 查看日志
+> git log
+
+- 查看历史日志(切换到了以前的版本)
+> git reflog(英文q退出)
+
 
 ## 切换
 
@@ -71,6 +77,12 @@
 
 - 版本回滚
 > git revert
+
+- 回滚到上个版本
+> git reset --hard HEAD^
+> git reset --hard HEAD^^ 上上版本
+> git reset --hard HEAD~100 上100个版本
+> git reset --hard [commit_id]
 
 - 删除本地缓存，不让该文件受版本的管理
 > git rm -r --cached [文件名称]
@@ -106,8 +118,14 @@
 ##	studio刚导入没有关联git，不显示提交的问题
 
 >	setting中version control来手动添加
+
+
 	
-	
+git 错误:error: RPC failed; HTTP 411 curl 22 The requested URL returned error: 411 Length Required
+
+出现这个错误的原因是git 通过http post的大小有限制，应该调大一些就可以了
+
+>	git config http.postBuffer  524288000
 	
 	
 	
