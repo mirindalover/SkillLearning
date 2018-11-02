@@ -103,6 +103,22 @@
 - 设置email
 > git config --global user.email [userEmail]
 
+
+## 创建git仓库与本地关联
+
+    1. 本地创建文件
+
+    2.  git init 初始化本地git仓库
+    
+    3. git config 配置本地用户和email
+    
+    4. git add . git commit 
+    
+    5. git remote add origin [http://]
+    
+    6. git push origin master
+
+
 ## git解决冲突：
 
 	git pull  ：
