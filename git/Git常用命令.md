@@ -88,6 +88,9 @@
 > git rm -r --cached [文件名称]
 > 应用示例:gitignore写错导致文件add到缓存
 
+- 删除远程文件a
+>  git rm -r --cached a
+
 ## 恢复
 
 -	恢复一个没有提交的文件
