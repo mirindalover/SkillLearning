@@ -91,6 +91,13 @@
 - 删除远程文件a
 >  git rm -r --cached a
 
+## 合并
+
+-	合并分支
+>	git merge test  在当前分支合并test分支内容
+>	git status		查看冲突
+>	git add . 		修改后提交
+
 ## 恢复
 
 -	恢复一个没有提交的文件
