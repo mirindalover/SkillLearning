@@ -18,7 +18,7 @@
 
 - 新建分支
 > git branch [branch-name] 
-
+> git branch HEAD^^2^ 链式调用，在以前的提交历史新建分支
 
 - 切换分支
 > git checkout [branch-name]
@@ -36,6 +36,8 @@
 
 - 提交暂存区到仓库区
 > git commit -m [message]
+
+> git commit --amend [message] 修改最近提交(直接修改文件后 add+ commit --amend)
 
 - 提交暂存区的指定文件到仓库区
 > $ git commit [file1] [file2] ... -m [message]
@@ -75,8 +77,12 @@
 - 查看本地分支
 > git branch
 
+- 把分支移动某个提交
+> git branch -f master HEAD^  吧master分支强制移动到HEAD^提交处
+
 - 版本回滚
-> git revert
+> git revert  与reset不同的是，revert会新建一个修改版本
+> 则，revert是修改提交，reset只是本地回滚
 
 - 回滚到上个版本
 > git reset --hard HEAD^
@@ -91,12 +97,23 @@
 - 删除远程文件a
 >  git rm -r --cached a
 
+- 移动Head
+>	git checkout  [cimmit_id]  由原来的Head->master->id变成了Head->id
+> 	git checkout HEAD~^2~2   链式调用，先移动到前一个，再移动到head前第二个父节点(合并过来的有2个节点),再移动前2个节点
+
 ## 合并
 
 -	合并分支
 >	git merge test  在当前分支合并test分支内容
 >	git status		查看冲突
 >	git add . 		修改后提交
+
+- 	rebase
+>	git rebase dev master 把dev分支合并到到master分支
+>	git rebase -i id  使用图形化的工具来合并 可排序提交
+
+- cherry-pick
+> git cherry-pick c1 c2 c3 把提交id c1 c2 c3 添加到 master分支
 
 ## 恢复
 
@@ -112,6 +129,14 @@
 
 - 设置email
 > git config --global user.email [userEmail]
+
+## TAG
+
+- 在某个提交id打TAG
+> git tag [TAG] [commit_id]
+
+- 查找TAG
+> git describe
 
 
 ## 创建git仓库与本地关联
@@ -152,6 +177,14 @@ git 错误:error: RPC failed; HTTP 411 curl 22 The requested URL returned error:
 出现这个错误的原因是git 通过http post的大小有限制，应该调大一些就可以了
 
 >	git config http.postBuffer  524288000
+	
+## Git说明
+	
+	git分支：不会创建多余的内存，只是指向某个提交记录。
+	
+	
+	
+	
 	
 	
 	
