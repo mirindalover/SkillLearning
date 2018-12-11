@@ -13,6 +13,9 @@
 
 - 新建一个分支，并切换到分支
 > git checkout -b [branch-name]
+> git checkout -b totallyNotMaster origin/master 可以指定分支跟踪的远程分支(提交和更新都与远程分支保持)
+
+> git branch -u o/master foo  把分支关联到 远程分支
 
 相当于 
 
@@ -32,6 +35,18 @@
 >
 > git add -A //添加当前目录的所有文件
 
+## 更新
+
+- fetch
+> git fetch 下载远程代码的更新到本地，但不会修改本地代码
+> git fetch origin <source>:<destination>  与push类似，拉取远程的分支到本地
+> 当source时空时，相当于创建一个本地分支
+
+- pull
+> git pull 相当于 git fetch ,git merge 下载合并
+> git pull --rebase 相当于 git fetch ,git rebase 
+> git pull origin <source>:<destination>,相当于fetch source...,merge
+
 ## 提交
 
 - 提交暂存区到仓库区
@@ -43,8 +58,11 @@
 > $ git commit [file1] [file2] ... -m [message]
 
 - 推送到远程仓库
-> git push [remote] [branch]
-		
+> git push [remote] [branch]   指定分支推送到远程，不需要HEAD必须在当前
+> git push origin <source>:<destination>   source可以是dev、dev^。destination即是分支，没有的话会创建
+> 当source是空时，相当于删除远程分支
+> git push默认使用的是config.default的设置模式		
+
 ## 属性查看：
 
 - 查看当前git的地址
@@ -80,6 +98,10 @@
 - 把分支移动某个提交
 > git branch -f master HEAD^  吧master分支强制移动到HEAD^提交处
 
+- 删除分支
+> git branch -d <branch_name>
+> git push origin --delete <branch_name>  删除远程仓库的分支
+
 - 版本回滚
 > git revert  与reset不同的是，revert会新建一个修改版本
 > 则，revert是修改提交，reset只是本地回滚
@@ -109,8 +131,11 @@
 >	git add . 		修改后提交
 
 - 	rebase
->	git rebase dev master 把dev分支合并到到master分支
+>	git rebase master dev 把dev分支合并到到master分支
+>   此时只是合并，master还没有在最前面。还需要命令 git rebase dev master
 >	git rebase -i id  使用图形化的工具来合并 可排序提交
+
+> 	merge和rebase的区别,rebase使提交树清晰，但是改变了顺序。merge则保留着顺序
 
 - cherry-pick
 > git cherry-pick c1 c2 c3 把提交id c1 c2 c3 添加到 master分支
@@ -134,6 +159,7 @@
 
 - 在某个提交id打TAG
 > git tag [TAG] [commit_id]
+> git push origin [TAG_NAME] 把tag提交到远程
 
 - 查找TAG
 > git describe
