@@ -191,6 +191,30 @@
 	
 	二、tortoiseGit --> Edit conflict
 	把最终的结果，保存到merge中
+	
+## git分支开发时，某一个提交需要合并到dev中
+
+	{没有提交记录
+	git commit   需要合并的内容
+	
+	git push origin target:target 	如果已经
+	
+	git commit   提交不需要合并的内容
+	
+	git checkout dev
+	
+	git merge origin/target   合并远程的target分支
+	}
+	
+	{有提交记录
+	git checkout dev
+	
+	git cherry-pick [需要提交的id]
+	
+	git push
+	}	
+	
+	git checkout target  可以继续开发
 
 ##	studio刚导入没有关联git，不显示提交的问题
 
