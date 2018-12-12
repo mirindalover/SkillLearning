@@ -158,11 +158,16 @@
 ## TAG
 
 - 在某个提交id打TAG
-> git tag [TAG] [commit_id]
-> git push origin [TAG_NAME] 把tag提交到远程
+> git tag [TAG] [commit_id] -m [MESSAGE] ,-m 是注释，可不写
+> git push origin [TAG_NAME] 把tag提交到远程,相当于git push origin refs/tags/[TAG]:refs/tags/[TAG]
 
 - 查找TAG
-> git describe
+> git describe  只会列出有注释的tag
+> git tag 		查看所有tag
+
+- 删除tag
+> git tag -d [TAG]
+> git push origin :refs/tags/[TAG]
 
 
 ## 创建git仓库与本地关联
