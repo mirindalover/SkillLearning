@@ -202,7 +202,7 @@
 	{没有提交记录
 	git commit   需要合并的内容
 	
-	git push origin target:target 	如果已经
+	git push origin target:target 	如果没有创建分支会创建
 	
 	git commit   提交不需要合并的内容
 	
