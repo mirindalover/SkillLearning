@@ -225,6 +225,18 @@
 
 >	setting中version control来手动添加
 
+## git使用本地的仓库来管理远程的仓库(可以到达本地多个 push到本地的仓库，本地仓库再同步到远程)
+
+> git clone
+> git config receive.denyCurrentBranch ignore
+> git config --bool receive.denyNonFastForwards false
+
+创建本地其他副本
+> git clone [本地文件地址]
+> git push    推送到本地仓库
+
+本地仓库
+> git push origin dev:dev  把本地仓库更新到远程
 
 	
 git 错误:error: RPC failed; HTTP 411 curl 22 The requested URL returned error: 411 Length Required
