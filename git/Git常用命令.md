@@ -31,7 +31,9 @@
 >
 > git add [dir] //添加目录
 >
-> git add . //添加当前目录的所有文件(不包括删除文件)
+> git add . //添加当前目录的所有新建、修改文件(不包括删除文件)
+>
+> git add -u //添加当前目录的所有删除、修改文件(不包括删除文件)
 >
 > git add -A //添加当前目录的所有文件
 
@@ -169,6 +171,32 @@
 > git tag -d [TAG]
 > git push origin :refs/tags/[TAG]
 
+## Submodules命令
+
+- 添加模块
+> git submodule add [模块] [文件夹]
+
+可看到添加了.gitmodules文件
+
+- clone带有submodule的项目
+> git submodule 可以查看submodle的状态  (-表示还没有检出)
+
+> git submodule init
+> git submodule update
+
+.git/config后面有submodule的信息
+
+- 修改依赖的模块
+
+> cd [module]
+> git checkout master
+> git commit -m 
+> git push
+
+- 同时提交项目的依赖模块id
+> cd app
+> git commit -m 
+> git push
 
 ## 创建git仓库与本地关联
 
