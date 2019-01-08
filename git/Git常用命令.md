@@ -118,8 +118,16 @@
 > git rm -r --cached [文件名称]
 > 应用示例:gitignore写错导致文件add到缓存
 
+- 忽略文件，不受版本控制
+> git update-index --assume-unchanged PATH  只能是文件
+> cd dir    ls | xargs -l git update-index --assume-unchanged 可以忽略文件夹
+> 应用于已经加入了版本控制，但是本地不想接受控制
+
 - 删除远程文件a
 >  git rm -r --cached a
+>  git rm -r --cached *.iml
+
+
 
 - 移动Head
 >	git checkout  [cimmit_id]  由原来的Head->master->id变成了Head->id
@@ -131,6 +139,8 @@
 >	git merge test  在当前分支合并test分支内容
 >	git status		查看冲突
 >	git add . 		修改后提交
+
+>   git merge --no-commit maint  merge但不提交
 
 - 	rebase
 >	git rebase master dev 把dev分支合并到到master分支
