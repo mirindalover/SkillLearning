@@ -140,7 +140,7 @@
 >	git status		查看冲突
 >	git add . 		修改后提交
 
->   git merge --no-commit maint  merge但不提交
+>   git merge --no-commit  merge但不提交
 
 - 	rebase
 >	git rebase master dev 把dev分支合并到到master分支
