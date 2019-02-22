@@ -259,6 +259,12 @@
 	
 	git checkout target  可以继续开发
 
+##  git版本库迁移
+
+	git remote set-url origin [url] 改变git的url即可
+	
+	后续直接提交
+
 ##	studio刚导入没有关联git，不显示提交的问题
 
 >	setting中version control来手动添加
