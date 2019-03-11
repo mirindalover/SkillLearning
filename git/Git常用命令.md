@@ -41,7 +41,7 @@
 
 - fetch
 > git fetch 下载远程代码的更新到本地，但不会修改本地代码
-> git fetch origin <source>:<destination>  与push类似，拉取远程的分支到本地
+> git fetch origin <source>:<destination>  与pull类似，拉取远程的分支到本地
 > 当source时空时，相当于创建一个本地分支
 
 - pull
@@ -117,6 +117,7 @@
 - 删除本地缓存，不让该文件受版本的管理
 > git rm -r --cached [文件名称]
 > 应用示例:gitignore写错导致文件add到缓存
+> git rm --cached *xxx 忽略文件(可与gitigonre相同)
 
 - 忽略文件，不受版本控制
 > git update-index --assume-unchanged PATH  只能是文件
