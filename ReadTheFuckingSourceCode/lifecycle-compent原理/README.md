@@ -65,7 +65,9 @@ v4.Fragment
 
 [1]:https://github.com/mirindalover/SummaryOfProgrammingLearning/blob/master/architecture/resource/fragment_lifecycle.png
 
+- 防止内存泄漏
 
+> LifecycleRegistry 通过WeakReference持有监听器对象
 
 
 
