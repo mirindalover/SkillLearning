@@ -85,11 +85,11 @@
         
         * dependencies
         
-        依赖使用classpath配置上
+        依赖的plugin,使用classpath配置
         
-        * allprojects
+        * allprojects/subprojects(子module)
         
-        所有项目module的依赖，与buildscript的区别是后者是gradle的依赖
+        所有项目module的设置
         
         * ext
         
@@ -104,6 +104,10 @@
        * apply from
        
        引用的脚本，就是把其他文件加进来，方便拆分
+	   
+	   * dependencies
+        
+        依赖的第三方库
 
     3. Extension
     

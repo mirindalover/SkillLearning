@@ -5,8 +5,11 @@
 - 下载整个项目
 > git clone [url]
 
--	下载指定分支的项目
->	git clone -b [分支] [url]
+- 下载指定分支的项目
+> git clone -b [分支] [url]
+
+- 深度下载(指定最近 commit)
+> git clone [url] --depth 1  也可指定分支
 
 - 新建一个分支
 > git branch [branch-name]
@@ -22,6 +25,7 @@
 - 新建分支
 > git branch [branch-name] 
 > git branch HEAD^^2^ 链式调用，在以前的提交历史新建分支
+> git branch [branch-name] [commitID] 基于某个提交记录新建分支
 
 - 切换分支
 > git checkout [branch-name]
@@ -285,6 +289,8 @@
 
 	
 git 错误:error: RPC failed; HTTP 411 curl 22 The requested URL returned error: 411 Length Required
+
+或者：error: RPC failed; curl 18 transfer closed with outstanding read data remaining
 
 出现这个错误的原因是git 通过http post的大小有限制，应该调大一些就可以了
 
