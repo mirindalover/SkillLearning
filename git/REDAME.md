@@ -294,11 +294,13 @@ git 错误:error: RPC failed; HTTP 411 curl 22 The requested URL returned error:
 
 出现这个错误的原因是git 通过http post的大小有限制，应该调大一些就可以了
 
->	git config http.postBuffer  524288000
+> git config http.postBuffer  524288000
+
+> git config --global http.postBuffer 524288000
 	
 ## Git说明
 	
-	git分支：不会创建多余的内存，只是指向某个提交记录。
+git分支：不会创建多余的内存，只是指向某个提交记录。
 	
 	
 	
