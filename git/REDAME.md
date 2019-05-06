@@ -147,6 +147,8 @@
 
 >   git merge --no-commit  merge但不提交
 
+> 	git merge --squash [branch] 只是合并代码,需重新提交
+	
 - 	rebase
 >	git rebase master dev 把dev分支合并到到master分支
 >   此时只是合并，master还没有在最前面。还需要命令 git rebase dev master
@@ -270,6 +272,26 @@
 	
 	后续直接提交
 
+## 多个commit合并为1个
+
+-	使用merge
+
+>	git merge --squash [branch] 只是合并代码,在重新填写commit message
+
+-	使用rebase -i 
+
+>	git checkout temp
+>
+>	git rebase -i master
+>	linux中保存修改：esc : wq
+>	可以通过修改temp分支的提交,达到合并commit
+>
+>	git checkout master
+>
+>	git merge devel
+
+-	区别：rebase修改了temp分支的提交历史
+
 ##	studio刚导入没有关联git，不显示提交的问题
 
 >	setting中version control来手动添加
@@ -288,7 +310,9 @@
 > git push origin dev:dev  把本地仓库更新到远程
 
 	
-git 错误:error: RPC failed; HTTP 411 curl 22 The requested URL returned error: 411 Length Required
+## git 错误
+
+error: RPC failed; HTTP 411 curl 22 The requested URL returned error: 411 Length Required
 
 或者：error: RPC failed; curl 18 transfer closed with outstanding read data remaining
 
