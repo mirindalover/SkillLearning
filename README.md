@@ -17,6 +17,10 @@
 
 - [多线程的介绍、线程池](https://github.com/mirindalover/SummaryOfProgrammingLearning/blob/master/java/多线程.md)
 
+- [java类编译加载](https://github.com/mirindalover/SummaryOfProgrammingLearning/blob/master/java/java类编译加载.md)
+
+- [java类编译加载](https://github.com/mirindalover/SummaryOfProgrammingLearning/blob/master/java/注解和泛型.md)
+
 ##	源码阅读
 
 记录一些日常的代码阅读小结
