@@ -1,7 +1,7 @@
 
-##Gradle学习##
+##	Gradle学习
 
-- 如何查看Gradle源码
+###	如何查看Gradle源码
 
     在项目的build.gradle中添加gralde的依赖
     gradle版本和项目的build.gradle的classpath相同即可
@@ -14,11 +14,12 @@
     }
     
     ```
-- 自定义插件步骤
+###	自定义插件
     
     1. 新建module，只保留src/main和build.gradle
     2. 在main新建groovy文件来存放groovy文件
     3. 在build.gradle中删除所有，添加如下
+	
     ```Java
     apply plugin: 'groovy'
 
@@ -31,9 +32,11 @@
         compile localGroovy()
     }
     ```
+	
     4. 创建groovy文件继承Plugin ,实现接口的方法
     5. 在main中创建resources/META_INF/gradle-plugin文件夹，创建properties文件，名称即为 使用时 的插件名称
     6. 在build.gradle中添加插件生成的代码
+	
     ```Java
     //使用时的环境，用于buildscript
     group='com.jd.mlc.plugin'
@@ -52,30 +55,34 @@
         }
     }
     ```
+	
     7. 引用：
         在Project的build.gradle中添加插件的环境
-        ```Java
-        buildscript {
-    
-            repositories {
-                maven{
-                    url uri('D:/repos')
-                }
-            }
-            dependencies {
-                classpath 'com.jd.mlc.plugin:plugin:1.0.0'
-            
-            }
-        }
-        ```
-        在app的build.gradle中使用插件
-        apply plugin: 'com.jd.mlc.test'
+		
+	```Java
+	buildscript {
+
+		repositories {
+			maven{
+				url uri('D:/repos')
+			}
+		}
+		dependencies {
+			classpath 'com.jd.mlc.plugin:plugin:1.0.0'
+		
+		}
+	}
+	```
+	
+	在app的build.gradle中使用插件
+	apply plugin: 'com.jd.mlc.test'
  
     
--   Gradle的配置属性、字段
-    1. Project的build.gradle
+###	Gradle的配置属性、字段
+
+####	Project的build.gradle
     
-       * buildscript
+		* buildscript
         
         gradle脚本自身需要的资源包括：依赖、插件、maven
 
@@ -95,7 +102,7 @@
         
         自定义的属性，比如使用rootProject.ext.xxxx，同时Project的build依赖(apply from)了其他的gradle文件(其中声明了ext)
 
-    2. Module的build.gradle
+####	Module的build.gradle
     
        * apply plugin
        
@@ -109,12 +116,12 @@
         
         依赖的第三方库
 
-    3. Extension
+####	Extension
     
         通过Extension，我们可以向目标对象添加DSL扩展，这一过程通过project中的ExtensionContainer来add，通过project.getExtensions()
                 .create获取，并与一个对应的委托类关联起来（即新建一个DSL域，并委托给一个具体类）
                 
-    4. Task
+####	Task
     
         Task是有生命周期的：
         初始化->配置->执行
@@ -126,7 +133,14 @@
         * Task的基类是DefaultTask 通过@TaskAction来表示执行的方法
         
         * dependsOn task的执行依赖谁，表示来要后于谁执行
-        
+ 
+###	Gradle问题
+
+####	Studio版本不同导致无法运行的问题
+
+	[各个版本对应的gradle](https://developer.android.google.cn/studio/releases/gradle-plugin.html#updating-plugin)
+	
+	解决方式：通过降低gradle-wrapper.properties、Project的build.gradle的tools.build
         
         
         
