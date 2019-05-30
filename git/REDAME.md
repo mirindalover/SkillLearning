@@ -321,6 +321,12 @@ error: RPC failed; HTTP 411 curl 22 The requested URL returned error: 411 Length
 > git config http.postBuffer  524288000
 
 > git config --global http.postBuffer 524288000
+
+##	git错误
+
+refusing to merge unrelated histories
+
+命令后添加 --allow-unrelated-histories
 	
 ## Git说明
 	
