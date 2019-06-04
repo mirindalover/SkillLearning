@@ -25,7 +25,7 @@
 	
 ####	后台服务
 
-	startService时回崩溃
+	startService时会崩溃
 	使用startForegroundService()5s不调用startForeground()也会崩溃
 	直接使用JobScheduler来进程后台服务
 	
