@@ -108,6 +108,8 @@
 > git branch -d <branch_name>
 > git push origin --delete <branch_name>  删除远程仓库的分支
 
+> git push origin :<branch> 	删除远程分支,但是保留本地
+
 - 版本回滚
 > git revert  与reset不同的是，revert会新建一个修改版本
 > 则，revert是修改提交，reset只是本地回滚
