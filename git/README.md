@@ -14,6 +14,8 @@
 - 新建一个分支
 > git branch [branch-name]
 
+> git checkout --orphan <branch> 新建一个没有提交记录的分支,但是有内容
+
 - 新建一个分支，并切换到分支
 > git checkout -b [branch-name]
 > git checkout -b totallyNotMaster origin/master 可以指定分支跟踪的远程分支(提交和更新都与远程分支保持)
