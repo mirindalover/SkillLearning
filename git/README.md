@@ -154,8 +154,8 @@
 > 	git merge --squash [branch] 只是合并代码,需重新提交
 	
 - 	rebase
->	git rebase master dev 把dev分支合并到到master分支
->   此时只是合并，master还没有在最前面。还需要命令 git rebase dev master
+>	git rebase master dev 把master的内容合并到dev分支,可能会改变提交顺序
+>   
 >	git rebase -i id  使用图形化的工具来合并 可排序提交
 
 > 	merge和rebase的区别,rebase使提交树清晰，但是改变了顺序。merge则保留着顺序
@@ -313,7 +313,15 @@
 本地仓库
 > git push origin dev:dev  把本地仓库更新到远程
 
+
+## git 合并(使用merge,还是rebase)
+
+- 不要在公共分支使用rebase，如果使用了,会导致其他人也需要rebase才能继续开发(因为master使用rebase改变了)
+
+	rebase使用场景：从公共分支拉代码,后公共分支更新,直接使用rebase合并即可
 	
+	
+
 ## git 错误
 
 error: RPC failed; HTTP 411 curl 22 The requested URL returned error: 411 Length Required
