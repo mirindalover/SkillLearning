@@ -107,7 +107,7 @@
 > git branch -f master HEAD^  吧master分支强制移动到HEAD^提交处
 
 - 删除分支
-> git branch -d <branch_name>
+> git branch -d <branch_name>	删除本地分支
 > git push origin --delete <branch_name>  删除远程仓库的分支
 
 > git push origin :<branch> 	删除远程分支,但是保留本地
