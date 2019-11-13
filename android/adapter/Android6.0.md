@@ -48,20 +48,15 @@
 			super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 			List<String> unGenPermission = new ArrayList<>();
             for (int i = 0; i < grantResults.length; i++) {
-                if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
+                if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {					
                     boolean showRequestPermission = ActivityCompat.shouldShowRequestPermissionRationale(mActivity, permissions[i]);
                     if (showRequestPermission) {
-						//没有权限 拒绝后 不允许再次询问
+						//拒绝后 需要提示用户 再继续申请
                         showRequest = false;
-                    } else {                        
-						unGenPermission.add(permissions[i]);
                     }
                 }
             }
-			
-			if (unGenPermission.size() != 0) {
-                ActivityCompat.requestPermissions(mActivity, unGenPermission.toArray(new String[unGenPermission.size()]), REQUEST_PERMISSION);
-            }			
+					
 			
 			if (!showRequest) {
 				showPermissionTip();
@@ -69,7 +64,18 @@
 		}
 	```
 	
+#####	shouldShowRequestPermissionRationale返回值
 
+1，没有申请过权限，申请就是了，所以返回false； 
+2，申请了用户拒绝了，那你就要提示用户了，所以返回true； 
+3，用户选择了拒绝并且不再提示，那你也不要申请了，也不要提示用户了，所以返回false； 
+4，已经允许了，不需要申请也不需要提示，所以返回false
+
+##### 外部存储权限获取失败后的策略
+
+1.大数据使用 context.getExternalFilesDir()存储在外部sd卡的路径
+
+2. 
 
 ####	WindowManager的类型适配
 

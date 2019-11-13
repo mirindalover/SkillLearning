@@ -155,6 +155,8 @@
 	
 - 	rebase
 >	git rebase master dev 把master的内容合并到dev分支,可能会改变提交顺序
+>	
+>	rebase失败可以使用git rebase --skip来结束，或者解决冲突后 git rebase --continue
 >   
 >	git rebase -i id  使用图形化的工具来合并 可排序提交
 
