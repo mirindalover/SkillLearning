@@ -345,6 +345,20 @@ refusing to merge unrelated histories
 ## Git说明
 	
 git分支：不会创建多余的内存，只是指向某个提交记录。
+
+### git一些commit丢失，找回办法
+
+1. git fsck --lost-found 查找丢失的记录，commit是丢失的commit
+
+2. git show [commitID] 查看commit的内容
+
+3. 确认后通过 git branch [commitID] 来新建分支来处理
+
+### git删除没有add的文件
+
+1. git clean -n 查看要删除的文件
+
+2. git clean -f 删除文件
 	
 	
 	
