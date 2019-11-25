@@ -14,7 +14,22 @@
     }
     
     ```
+### Gradle介绍
+
+[Gradle官网](https://docs.gradle.org/current/dsl/index.html)
+
+#### Project
+	
+	每个build.gradle文件解析后生成Project对象
+	
+#### Task
+
+	执行构建的自小单元
+ 
+
 ###	自定义插件
+
+	插件如：'com.android.application'插件->AppExtension
     
     1. 新建module，只保留src/main和build.gradle
     2. 在main新建groovy文件来存放groovy文件
@@ -77,7 +92,6 @@
 	在app的build.gradle中使用插件
 	apply plugin: 'com.jd.mlc.test'
  
-    
 ###	Gradle的配置属性、字段
 
 ####	Project的build.gradle
@@ -116,10 +130,12 @@
         
         依赖的第三方库
 
-####	Extension
+####	Extension(扩展配置)
     
         通过Extension，我们可以向目标对象添加DSL扩展，这一过程通过project中的ExtensionContainer来add，通过project.getExtensions()
                 .create获取，并与一个对应的委托类关联起来（即新建一个DSL域，并委托给一个具体类）
+				
+				可通过findByType，来查找存在的DSL域
                 
 ####	Task
     
