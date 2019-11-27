@@ -28,8 +28,6 @@
  
 
 ###	自定义插件
-
-	插件如：'com.android.application'插件->AppExtension
     
     1. 新建module，只保留src/main和build.gradle
     2. 在main新建groovy文件来存放groovy文件

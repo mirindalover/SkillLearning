@@ -19,6 +19,7 @@ SDK\tools\monitor.bat
 
 		compile ('com.github.JakeWharton:ViewPagerIndicator:2.4.1') {
             exclude module: 'support-v4'
+			exclude group: 'xxx'
         }
 
 
