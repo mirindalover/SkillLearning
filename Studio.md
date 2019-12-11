@@ -22,5 +22,7 @@ SDK\tools\monitor.bat
 			exclude group: 'xxx'
         }
 
+#### java类查询属性分组
 
+使用： //<editor-fold desc="开放接口">  //</editor-fold>
 

@@ -69,7 +69,17 @@
 > git push [remote] [branch]   指定分支推送到远程，不需要HEAD必须在当前
 > git push origin <source>:<destination>   source可以是dev、dev^。destination即是分支，没有的话会创建
 > 当source是空时，相当于删除远程分支
-> git push默认使用的是config.default的设置模式		
+> git push默认使用的是config.default的设置模式	
+
+## 暂时提交
+
+- 暂存修改
+
+> git stash | git stash save [message] 暂存修改
+
+> git stash list 查看所有的stash
+
+> git stash pop | git stash pop stash@{$num} 取出暂存	
 
 ## 属性查看：
 
@@ -286,15 +296,12 @@
 
 -	使用rebase -i 
 
->	git checkout temp
+>	git checkout temp(在master分支最新的commit上checkout)
 >
->	git rebase -i master
+>	git rebase -i [commitID] 从commit开始合并--中间可以删除某个commit
 >	linux中保存修改：esc : wq
 >	可以通过修改temp分支的提交,达到合并commit
 >
->	git checkout master
->
->	git merge devel
 
 -	区别：rebase修改了temp分支的提交历史
 
