@@ -81,6 +81,10 @@
 
 > git stash pop | git stash pop stash@{$num} 取出暂存	
 
+> git stash clear  清空stash
+
+> git stash drop stash@{0} 删除某个stash
+
 ## 属性查看：
 
 - 查看当前git的地址

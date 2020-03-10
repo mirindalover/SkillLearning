@@ -69,6 +69,10 @@
     }
     ```
 	
+> 'maven' 插件会把依赖的都放到pom文件中
+>
+> android的lib,可以使用com.github.dcendents.android-maven 插件
+	
     7. 引用：
         在Project的build.gradle中添加插件的环境
 		
@@ -89,6 +93,26 @@
 	
 	在app的build.gradle中使用插件
 	apply plugin: 'com.jd.mlc.test'
+	
+- BuildConfig中添加属性
+
+```Java
+ext{
+	serverAddress = ""http://10.222xx""
+}
+
+buildTypes {
+	debug {
+		minifyEnabled false
+		buildConfigField('String', 'serverAddress', serverAddress)
+		proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+	}
+	release {
+		minifyEnabled true
+		proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+	}
+}
+```
  
 ###	Gradle的配置属性、字段
 
