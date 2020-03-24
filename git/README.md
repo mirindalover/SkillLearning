@@ -166,12 +166,12 @@
 >   git merge --no-commit  merge但不提交
 
 > 	git merge --squash [branch] 只是合并代码,需重新提交
-	
+
 - 	rebase
 >	git rebase master dev 把master的内容合并到dev分支,可能会改变提交顺序
 >	
 >	rebase失败可以使用git rebase --skip来结束，或者解决冲突后 git rebase --continue
->   
+>   	
 >	git rebase -i id  使用图形化的工具来合并 可排序提交
 
 > 	merge和rebase的区别,rebase使提交树清晰，但是改变了顺序。merge则保留着顺序
@@ -235,10 +235,14 @@
 > git commit -m 
 > git push
 
+## HEAD ^与~
+
+
+
 ## 创建git仓库与本地关联
 
     1. 本地创建文件
-
+    
     2.  git init 初始化本地git仓库
     
     3. git config 配置本地用户和email
@@ -261,7 +265,7 @@
 	
 	二、tortoiseGit --> Edit conflict
 	把最终的结果，保存到merge中
-	
+
 ## git分支开发时，某一个提交需要合并到dev中
 
 	{没有提交记录
@@ -294,15 +298,15 @@
 
 ## 多个commit合并为1个
 
--	使用merge
+-	使用merge(不是真正意义上的合并)
 
 >	git merge --squash [branch] 只是合并代码,在重新填写commit message
 
 -	使用rebase -i 
 
->	git checkout temp(在master分支最新的commit上checkout)
->
->	git rebase -i [commitID] 从commit开始合并--中间可以删除某个commit
+>	git checkout temp(保证temp分支有所有的提交)
+>	
+>	git rebase -i [commitID] 从commit->最后的提交。开始合并--中间可以删除某个commit
 >	linux中保存修改：esc : wq
 >	可以通过修改temp分支的提交,达到合并commit
 >
@@ -354,7 +358,7 @@ refusing to merge unrelated histories
 命令后添加 --allow-unrelated-histories
 	
 ## Git说明
-	
+
 git分支：不会创建多余的内存，只是指向某个提交记录。
 
 ### git一些commit丢失，找回办法
