@@ -11,6 +11,9 @@ tool中显示更多的工具：view-toolbar勾选
 #### AndroidStudio 预览问题
 Theme需要时Base.XXXX
 
+#### Design editor is unavailable until a successful build
+File > Sync Project with Gradles Files.
+
 
 #### AndroidStudio 布局查看工具地址、模拟器文件查看
 SDK\tools\monitor.bat
