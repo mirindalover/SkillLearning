@@ -130,6 +130,9 @@
 > git revert  与reset不同的是，revert会新建一个修改版本
 > 则，revert是修改提交，reset只是本地回滚
 
+> 在想要回滚的commit新建分支
+> git push origin temp:xxx --force	强制覆盖远程分支
+
 - 回滚到上个版本
 > git reset --hard HEAD^
 > git reset --hard HEAD^^ 上上版本
@@ -178,6 +181,7 @@
 
 - cherry-pick
 > git cherry-pick c1 c2 c3 把提交id c1 c2 c3 添加到 master分支
+> git cherry-piack c1..c2 (c1,c2]合并多个提交
 
 ## 恢复
 
