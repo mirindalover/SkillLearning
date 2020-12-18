@@ -179,6 +179,8 @@
 
 > 	merge和rebase的区别,rebase使提交树清晰，但是改变了顺序。merge则保留着顺序
 
+>	取消merge的状态：git reset --hard
+
 - cherry-pick
 > git cherry-pick c1 c2 c3 把提交id c1 c2 c3 添加到 master分支
 > git cherry-piack c1..c2 (c1,c2]合并多个提交
