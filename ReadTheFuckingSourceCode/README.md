@@ -23,7 +23,10 @@
 - 由于文件较大，可能需要设置 git config --global http.postBuffer 524288000
 
 
-#### insight-source快捷键
+### TODO
+
+kafka的内存优化，通过 缓冲池 的方式优化内存  =类似= okhttp复用 Segment池
+
 
 
 

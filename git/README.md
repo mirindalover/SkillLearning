@@ -148,6 +148,9 @@
 > git update-index --assume-unchanged PATH  只能是文件
 > cd dir    ls | xargs -l git update-index --assume-unchanged 可以忽略文件夹
 > 应用于已经加入了版本控制，但是本地不想接受控制
+>
+> 切换到其他分支，由于分支上有不受版本控制的文件更新。报错： 
+> git update-index --really-refresh [file]
 
 - 删除远程文件a
 >  git rm -r --cached a
